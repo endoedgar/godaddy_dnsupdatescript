@@ -1,0 +1,5 @@
+services:
+  script:
+    env_file:
+        - .env
+    build: .
