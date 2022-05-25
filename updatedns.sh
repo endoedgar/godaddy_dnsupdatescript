@@ -7,8 +7,7 @@ apiResult=$(wget -O - -q --header="$authorizationHeader" "https://api.godaddy.co
 currentDnsIp=$(echo $apiResult | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
 echo "DNS IP: $currentDnsIp"
 
-apiResult=$(wget -O - -q "http://ipinfo.io/json")
-currentRouterIp=$(echo $apiResult | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
+currentRouterIp=$(wget -O - -q "https://api.ipify.org")
 
 echo "Current Router IP: $currentRouterIp"
 
